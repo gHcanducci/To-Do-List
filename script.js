@@ -1,19 +1,19 @@
-// Script Dark-Mode
+// Script Light-Mode
 let lightmode = localStorage.getItem("lightmode");
 const themeSwitch = document.getElementById("switch-mode");
 
-// Ativando Dark Mode
+// Ativando Light Mode
 const enableLightmode = () => {
   document.body.classList.add("lightmode");
   localStorage.setItem("lightmode", "active");
 };
 
-// Desativando Dark Mode
+// Desativando Light Mode
 const disableLightmode = () => {
   document.body.classList.remove("lightmode");
   localStorage.removeItem("lightmode");
 };
-// Condicional para saber se na última vez que o site foi acessado havia sido habilitado o Dark Mode
+// Condicional para saber se na última vez que o site foi acessado havia sido habilitado o Light Mode
 if (lightmode === "active") enableLightmode();
 
 // Troca de modo através do click e guardando a informação da ativação no localStorage
@@ -42,6 +42,8 @@ function add_new_task() {
     listaDeTarefas.push(task);
     input.value = "";
     display_task();
+  } else {
+    alert("Para adicionar uma tarefa, preencha o CAMPO VAZIO!!");
   }
 }
 
